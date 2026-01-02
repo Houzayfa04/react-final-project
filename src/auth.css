@@ -1,0 +1,156 @@
+/* =========================
+   NAVBAR (CLEAN + CENTERED)
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 12px 40px;
+  z-index: 999;
+
+  /* ✅ Grid to center the greeting perfectly */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  background: linear-gradient(90deg, #0077cc, #00c896);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+/* left side (logo + links) */
+.navbar_left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-self: start;
+}
+
+.navbar_logo {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.navbar_links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav_link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease, transform 0.1s ease, color 0.2s ease;
+  font-size: 15px;
+}
+
+.nav_link:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.nav_link-active {
+  background-color: white;
+  color: #0077cc;
+}
+
+/* ✅ CENTER greeting */
+.navbar_center {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+}
+
+.navbar_greeting {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  cursor: default;
+}
+
+/* ✅ RIGHT logout */
+/* right side container */
+.navbar_right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* make the middle column truly centered even when right side changes */
+.navbar_greeting_wrap {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Better logout (smaller + fits) */
+.navbar_logout {
+  all: unset; /* ✅ kills global button styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+  padding: 0 14px;
+
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: rgba(0, 0, 0, 0.14);
+
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.navbar_logout:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.navbar_logout:active {
+  transform: scale(0.96);
+}
+
+
+/* mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 16px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .navbar_left,
+  .navbar_center,
+  .navbar_right {
+    justify-self: center;
+  }
+}

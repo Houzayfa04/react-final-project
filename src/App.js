@@ -7,6 +7,9 @@ import About from "./pages/about";
 import { MainContext } from "./utils/context";
 import { useState } from "react";
 import Features from "./pages/features";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import "./auth.css";
 
 
 function App() {
@@ -17,6 +20,8 @@ function App() {
     <MainContext.Provider value={{ lastCalledUser, storeLastCalledUser }}>
       <Navbar />
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/about" element={<About />} />

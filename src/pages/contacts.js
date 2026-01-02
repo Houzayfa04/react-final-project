@@ -10,7 +10,7 @@ function Contacts() {
   useEffect(() => {
     isLoading(true);
     const getData = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
+     const res = await fetch("/api/users");
       const data = await res.json();
       setUsers(data);
       isLoading(false);
@@ -31,13 +31,16 @@ return (
         ) : (
           users.map((user, index) => {
             return (
-              <UserCard
-                key={index}
-                name={user.name}
-                email={user.email}
-                address={user.address}
-                phone={user.phone}
-              />
+       <UserCard
+          key={user.id}
+          id={user.id}
+          name={user.name}
+          email={user.email}
+          address={user.address}
+          phone={user.phone}
+          latitude={user.latitude}
+          longitude={user.longitude}
+        />
             );
           })
         )}
