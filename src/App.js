@@ -10,6 +10,13 @@ import Features from "./pages/features";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "./auth.css";
+import AdminLayout from "./admin/AdminLayout";
+import AdminDashboard from "./admin/pages/Dashboard";
+import AdminAuthUsers from "./admin/pages/AuthUsers";
+import AdminContactUsers from "./admin/pages/ContactUsers";
+import AdminCalls from "./admin/pages/Calls";
+
+
 
 
 function App() {
@@ -20,6 +27,12 @@ function App() {
     <MainContext.Provider value={{ lastCalledUser, storeLastCalledUser }}>
       <Navbar />
       <Routes>
+        <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<AdminDashboard />} />
+        <Route path="auth-users" element={<AdminAuthUsers />} />
+        <Route path="contact-users" element={<AdminContactUsers />} />
+        <Route path="calls" element={<AdminCalls />} />
+      </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />

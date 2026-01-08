@@ -27,6 +27,16 @@ function Navbar() {
             Home
           </NavLink>
 
+              <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                isActive ? "nav_link nav_link-active" : "nav_link"
+              }
+            >
+              Admin
+            </NavLink>
+
+
           <NavLink
             to="/contacts"
             className={({ isActive }) =>

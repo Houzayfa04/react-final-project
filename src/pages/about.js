@@ -23,7 +23,7 @@ function About() {
          The project was inspired by the idea of creating a simple and modern React application that helps users practice real-world web development skills.
         </p>
         <p>
-          This project was developed by Houzayfa Ayoubi, Fall 2025–2026.
+          This project was developed by Adamfrijeh, Fall 2025–2026.
         </p>
         <button onClick={() => navigate("/")}>Go Back</button>
       </div>
